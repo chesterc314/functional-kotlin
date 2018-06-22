@@ -4,52 +4,52 @@
     <string name="next">Next</string>
     <string name="empty">empty</string>
     <string name="about_me_content">
-        • My previous experience is in C# and JAVA /n
-        • Professionally I was a web developer in C# and what I did as a hobby was build android apps in JAVA /n
-        • Its been year now and I am scala web developer and I now build my android applications in Kotlin /n
-        • I've completely shifted to functional programming /n
+        • My previous experience is in C# and JAVA/n
+        • Professionally I was a web developer in C# and what I did as a hobby was build android apps in JAVA/n
+        • Its been year now and I am scala web developer and I now build my android applications in Kotlin/n
+        • I've completely shifted to functional programming/n
     </string>
     <string name="what_is_kotlin_content">
-        • Statically typed programming language for modern multi-platform applications
-        • 100% interoperable with Java™ and Android™
-        • Created by JetBrains
-        • It has both functional and imperative programming paradigms
+        • Statically typed programming language for modern multi-platform applications/n
+        • 100% interoperable with Java™ and Android™/n
+        • Created by JetBrains/n
+        • It has both functional and imperative programming paradigms/n
     </string>
     <string name="why_kotlin_content">
-        • Concise - reduce boilerplate code
-        • Safe - null pointer exceptions
-        • Interoperable - JAVA
-        • Tool-friendly - Intelli-sense
+        • Concise - reduce boilerplate code/n
+        • Safe - null pointer exceptions/n
+        • Interoperable - JAVA/n
+        • Tool-friendly - Intelli-sense/n
     </string>
     <string name="functional_kotlin_aspects">
-        • Immutability (no side effects) - var vs val, DTO and data structures(List, Map and Set)
-        • Higher-Order Functions - Functions are first class citizens (pass, return, initialise)
-        • A third-party library to make Kotlin more functional called FunKTionale (Option, Try, Composition, Currying, Either)
+        • Immutability (no side effects) - var vs val, DTO and data structures(List, Map and Set)/n
+        • Higher-Order Functions - Functions are first class citizens (pass, return, initialise)/n
+        • A third-party library to make Kotlin more functional called FunKTionale (Option, Try, Composition, Currying, Either)/n
     </string>
     <string name="immutability_content">
-        • var vs val
-            {result}
-        • DTO and data structures(List, Map and Set)
-            {result}
+        • var vs val/n
+            {result1}/n
+        • DTO and data structures(List, Map and Set)/n
+            {result2}/n
     </string>
     <string name="high_order_functions_content">
-        • Functions are first class citizens
-            {result}
+        • Functions are first class citizens/n
+            {result1}/n
 
-            {result}
+            {result2}/n
 
-            {result}
+            {result3}/n
     </string>
     <string name="funKTionale_content">
-        • Option
-            {result}
+        • Option/n
+            {result1}/n
         • Either
-            {result}
+            {result2}/n
         • Try
-            {result}
-        • Composition
-            {result}
-        • Currying
-            {result}
+            {result3}/n
+        • Composition/n
+            {result4}/n
+        • Currying/n
+            {result5}/n
     </string>
 </resources>
