@@ -13,7 +13,7 @@ class SplashScreenActivity : AppCompatActivity() {
                 .withFullScreen()
                 .withTargetActivity(MainActivity::class.java)
                 .withSplashTimeOut(5000)
-                .withBackgroundResource(android.R.color.white)
+                .withBackgroundResource(android.R.color.black)
                 .withLogo(R.mipmap.lambda_luminaries)
                 .create()
 
