@@ -4,11 +4,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.TextView
-import org.funktionale.option.Option
-import org.funktionale.option.getOrElse
 
 data class Slide(val title: String, val sections: Set<Section>)
-data class Section(val content: String, val maybeAction: Option<(String) -> String> = Option.Some({ it -> it}))
+data class Section(val content: String, val action: (String) -> String = { it -> it })
 
 class MainActivity : AppCompatActivity() {
     private var count = 0
@@ -23,19 +21,19 @@ class MainActivity : AppCompatActivity() {
                 Slide("Why Kotlin?", setOf(Section(resources.getString(R.string.why_kotlin_content)))),
                 Slide("Functional Kotlin aspects", setOf(Section(resources.getString(R.string.functional_kotlin_aspects)))),
                 Slide("Immutability", setOf(
-                        Section(resources.getString(R.string.immutability_content), Option.Some({ it ->
+                        Section(resources.getString(R.string.immutability_content), { it ->
                             it.replace("{result1}", "")
-                        }))
+                        })
                 )),
                 Slide("Higher-Order Functions", setOf(
-                        Section(resources.getString(R.string.high_order_functions_content), Option.Some({ it ->
+                        Section(resources.getString(R.string.high_order_functions_content), { it ->
                             it.replace("{result1}", "")
-                        }))
+                        })
                 )),
                 Slide("FunKTionale", setOf(
-                        Section(resources.getString(R.string.funKTionale_content), Option.Some({ it ->
+                        Section(resources.getString(R.string.funKTionale_content), { it ->
                             it.replace("{result1}", "")
-                        }))
+                        })
                 ))
         )
         val currentSlide = slides.first()
@@ -46,26 +44,26 @@ class MainActivity : AppCompatActivity() {
         title = currentSlide.title
         val textView: TextView = findViewById(R.id.textView)
         val content = currentSlide.sections.fold("", { acc, it ->
-            "$acc${it.maybeAction.map { action -> action(it.content) }.getOrElse { "" }}"
+            "$acc${it.action(it.content)}"
         })
         textView.text = content
     }
 
     fun next(view: View) {
-        if (count < slides.size - 1) {
-            updateTitleAndContent(slides.elementAt(++count))
+        count = if (count < slides.size - 1) {
+            ++count
         } else {
-            count = slides.size - 1
-            updateTitleAndContent(slides.elementAt(count))
+            slides.size - 1
         }
+        updateTitleAndContent(slides.elementAt(count))
     }
 
     fun back(view: View) {
-        if (count > 0) {
-            updateTitleAndContent(slides.elementAt(--count))
+        count = if (count > 0) {
+            --count
         } else {
-            count = 0
-            updateTitleAndContent(slides.elementAt(count))
+            0
         }
+        updateTitleAndContent(slides.elementAt(count))
     }
 }
