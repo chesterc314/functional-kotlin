@@ -4,20 +4,20 @@
     <string name="next">Next</string>
     <string name="empty">empty</string>
     <string name="about_me_content">
-        • My previous experience is in C# and JAVA\n\n
-        • Professionally I was a web developer in C# and what I did as a hobby was build android apps in JAVA\n\n
-        • Its been year now and I am scala web developer and I now build my android applications in Kotlin\n\n
+        • My previous experience was in C# and JAVA\n\n
+        • Professionally I was a web developer in C# and I build android apps for fun in JAVA\n\n
+        • Its been year now and I am Scala web developer and I now build my android applications in Kotlin\n\n
         • I have completely shifted to functional programming
     </string>
     <string name="what_is_kotlin_content">
         • Statically typed programming language for modern multi-platform applications\n\n
         • 100% interoperable with Java™ and Android™\n\n
-        • Created by JetBrain\n\n
+        • Created by JetBrains\n\n
         • It has both functional and imperative programming paradigms
     </string>
     <string name="why_kotlin_content">
         • Concise - reduce boilerplate code\n\n
-        • Safe - null pointer exceptions\n\n
+        • Safe - null pointer exceptions (using nullable types)\n\n
         • Interoperable - JAVA\n\n
         • Tool-friendly - Intelli-sense\n\n
     </string>
