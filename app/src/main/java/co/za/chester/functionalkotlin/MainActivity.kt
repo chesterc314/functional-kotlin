@@ -5,7 +5,12 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.TextView
 
-data class Slide(val title: String, val sections: Set<Section>)
+data class Slide(val title: String, val sections: Set<Section>) {
+    fun getContent(): String = sections.fold("") { acc, it ->
+        "$acc${it.action(it.content)}"
+    }
+}
+
 data class Section(val content: String, val action: (String) -> String = { it -> it })
 
 class MainActivity : AppCompatActivity() {
@@ -21,19 +26,19 @@ class MainActivity : AppCompatActivity() {
                 Slide("Why Kotlin?", setOf(Section(resources.getString(R.string.why_kotlin_content)))),
                 Slide("Functional Kotlin aspects", setOf(Section(resources.getString(R.string.functional_kotlin_aspects)))),
                 Slide("Immutability", setOf(
-                        Section(resources.getString(R.string.immutability_content), { it ->
+                        Section(resources.getString(R.string.immutability_content)) { it ->
                             it.replace("{result1}", "")
-                        })
+                        }
                 )),
                 Slide("Higher-Order Functions", setOf(
-                        Section(resources.getString(R.string.high_order_functions_content), { it ->
+                        Section(resources.getString(R.string.high_order_functions_content)) { it ->
                             it.replace("{result1}", "")
-                        })
+                        }
                 )),
                 Slide("FunKTionale", setOf(
-                        Section(resources.getString(R.string.funKTionale_content), { it ->
+                        Section(resources.getString(R.string.funKTionale_content)) { it ->
                             it.replace("{result1}", "")
-                        })
+                        }
                 ))
         )
         val currentSlide = slides.first()
@@ -43,10 +48,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateTitleAndContent(currentSlide: Slide) {
         title = currentSlide.title
         val textView: TextView = findViewById(R.id.textView)
-        val content = currentSlide.sections.fold("", { acc, it ->
-            "$acc${it.action(it.content)}"
-        })
-        textView.text = content
+        textView.text = currentSlide.getContent()
     }
 
     fun next(view: View) {
