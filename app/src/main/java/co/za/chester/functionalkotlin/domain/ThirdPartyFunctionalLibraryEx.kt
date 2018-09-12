@@ -1,6 +1,6 @@
-package co.za.chester.functionalkotlin
+package co.za.chester.functionalkotlin.domain
 
-object HigherOrderFunctions {
+object ThirdPartyFunctionalLibraryEx {
     val examples: (content: String) -> String = { content ->
         content + "R"
     }

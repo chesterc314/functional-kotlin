@@ -1,6 +1,6 @@
-package co.za.chester.functionalkotlin
+package co.za.chester.functionalkotlin.domain
 
-object Immutability {
+object HigherOrderFunctionsEx {
     val examples: (content: String) -> String = { content ->
         content + "R"
     }
