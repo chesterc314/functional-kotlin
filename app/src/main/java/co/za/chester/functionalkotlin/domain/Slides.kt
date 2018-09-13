@@ -38,7 +38,17 @@ object HigherOrderFunctions : BaseSlide("Higher-Order Functions", Section(Consta
     override fun back() = Immutability
 }
 
+object NullableTypesVsOptions : BaseSlide("Nullable Types vs Options", Section(Constants.NULLABLE_TYPES_VS_OPTIONS, NullableTypesVsOptionsEx.examples)) {
+    override fun next() = KotlinVsScala
+    override fun back() = HigherOrderFunctions
+}
+
+object KotlinVsScala : BaseSlide("Kotlin vs Scala", Section(Constants.KOTLIN_VS_SCALA)) {
+    override fun next() = ThirdPartyFunctionalLibrary
+    override fun back() = NullableTypesVsOptions
+}
+
 object ThirdPartyFunctionalLibrary : BaseSlide("Third Party Functional Library", Section(Constants.THIRD_PARTY_FUNCTIONAL_LIBRARY_CONTENT, ThirdPartyFunctionalLibraryEx.examples)) {
     override fun next() = AboutMeSlide
-    override fun back() = HigherOrderFunctions
+    override fun back() = KotlinVsScala
 }

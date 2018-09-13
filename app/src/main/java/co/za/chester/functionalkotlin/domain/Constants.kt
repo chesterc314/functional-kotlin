@@ -30,15 +30,27 @@ object Constants {
         "     {result1}\n\n" +
         "     {result2}\n\n" +
         "     {result3}"
+    const val NULLABLE_TYPES_VS_OPTIONS =
+            "• Nullable types\n\n" +
+            "      {result1}\n\n" +
+            "• Options\n\n" +
+            "      {result2}"
+    const val KOTLIN_VS_SCALA =
+            "________Kotlin_________|VS|________Scala__________\n\n" +
+            " Better tooling          |  Tooling is getting       \n\n" +
+            " Easier to learn         |  Steep learning curve        \n\n" +
+            " JAVA interoperablity    |  JAVA interoperablity        \n\n" +
+            " Community               |  Community       \n\n" +
+            " Nullable types          |  Options       \n\n" +
+            " No compile check?       |  Wartremover       \n\n" +
+            " Weak pattern matching   |  Strong pattern matching"
     const val THIRD_PARTY_FUNCTIONAL_LIBRARY_CONTENT =
         "• Option\n\n" +
         "     {result1}\n\n" +
-        "• Either\n\n" +
-        "     {result2}\n\n" +
         "• Try\n\n" +
-        "     {result3}\n\n" +
+        "     {result2}\n\n" +
         "• Composition\n\n" +
-        "     {result4}\n\n" +
+        "     {result3}\n\n" +
         "• Currying\n\n" +
-        "     {result5}"
+        "     {result4}"
  }
