@@ -28,13 +28,13 @@ object FunctionalKotlinAspects : BaseSlide("Functional Kotlin aspects", Section(
     override fun back() = WhyKotlin
 }
 
-object Immutability : BaseSlide("Immutability", Section(Constants.IMMUTABILITY_CONTENT, ImmutabilityEx.examples)) {
+object Immutability : BaseSlide("Immutability", Section(Constants.IMMUTABILITY_CONTENT)) {
     override fun next() = HigherOrderFunctions
     override fun back() = FunctionalKotlinAspects
 }
 
 object HigherOrderFunctions : BaseSlide("Higher-Order Functions", Section(Constants.HIGH_ORDER_FUNCTIONS_CONTENT, HigherOrderFunctionsEx.examples)) {
-    override fun next() = ThirdPartyFunctionalLibrary
+    override fun next() = NullableTypesVsOptions
     override fun back() = Immutability
 }
 

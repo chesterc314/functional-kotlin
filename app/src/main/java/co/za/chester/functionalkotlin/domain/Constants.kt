@@ -22,9 +22,10 @@ object Constants {
         "• A third-party library to make Kotlin more functional called FunKTionale (Option, Try, Composition, Currying, Either)"
     const val IMMUTABILITY_CONTENT =
         "• var vs val\n\n" +
-        "      {result1}\n\n" +
+        "      var - mutable (getter and setter) \n\n" +
+        "      val - is readonly (getter) can be immutable \n\n" +
         "• DTO and data structures(List, Map and Set)\n\n" +
-        "      {result2}"
+        "      {result1}"
     const val HIGH_ORDER_FUNCTIONS_CONTENT =
         "• Functions are first class citizens\n\n" +
         "     {result1}\n\n" +
@@ -36,17 +37,15 @@ object Constants {
             "• Options\n\n" +
             "      {result2}"
     const val KOTLIN_VS_SCALA =
-            "________Kotlin_________|VS|________Scala__________\n\n" +
-            " Better tooling          |  Tooling is getting       \n\n" +
-            " Easier to learn         |  Steep learning curve        \n\n" +
-            " JAVA interoperablity    |  JAVA interoperablity        \n\n" +
-            " Community               |  Community       \n\n" +
-            " Nullable types          |  Options       \n\n" +
-            " No compile check?       |  Wartremover       \n\n" +
+            "Kotlin |VS| Scala\n\n" +
+            " Better tooling          |  Tooling is getting       \n" +
+            " Easier to learn         |  Steep learning curve        \n" +
+            " JAVA interoperablity    |  JAVA interoperablity        \n" +
+            " Community               |  Community       \n" +
+            " Nullable types          |  Options       \n" +
+            " No compile check?       |  Wartremover       \n" +
             " Weak pattern matching   |  Strong pattern matching"
     const val THIRD_PARTY_FUNCTIONAL_LIBRARY_CONTENT =
-        "• Option\n\n" +
-        "     {result1}\n\n" +
         "• Try\n\n" +
         "     {result2}\n\n" +
         "• Composition\n\n" +
