@@ -3,9 +3,10 @@ package co.za.chester.functionalkotlin
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.TextView
+import android.webkit.WebView
 import co.za.chester.functionalkotlin.domain.AboutMeSlide
 import co.za.chester.functionalkotlin.domain.BaseSlide
+import co.za.chester.functionalkotlin.domain.Constants.HTML_CONTENT
 
 class MainActivity : AppCompatActivity() {
     private var currentSlide: BaseSlide = AboutMeSlide
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateTitleAndContent(slide: BaseSlide) {
         this.title = slide.title
-        val textView: TextView = findViewById(R.id.textView)
-        textView.text = slide.getContent()
+        val webView: WebView = findViewById(R.id.webView)
+        webView.loadData(HTML_CONTENT.replace("@{mark-down-content}", slide.content()), null, null)
     }
 }

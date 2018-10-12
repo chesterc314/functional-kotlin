@@ -3,7 +3,7 @@ package co.za.chester.functionalkotlin.domain
 data class Section(val content: String, val action: (String) -> String = { it -> it })
 
 abstract class BaseSlide(val title: String, private val section: Section) {
-    fun getContent(): String = section.action(section.content)
+    fun content(): String = section.action(section.content)
     abstract fun next(): BaseSlide
     abstract fun back(): BaseSlide
 }
@@ -28,7 +28,7 @@ object FunctionalKotlinAspects : BaseSlide("Functional Kotlin aspects", Section(
     override fun back() = WhyKotlin
 }
 
-object Immutability : BaseSlide("Immutability", Section(Constants.IMMUTABILITY_CONTENT)) {
+object Immutability : BaseSlide("Immutability", Section(Constants.IMMUTABILITY_CONTENT, ImmutabilityEx.examples)) {
     override fun next() = HigherOrderFunctions
     override fun back() = FunctionalKotlinAspects
 }
