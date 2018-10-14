@@ -3,9 +3,9 @@ package co.za.chester.functionalkotlin.domain
 object Constants {
      const val ABOUT_ME_CONTENT =
         "* My experience a year ago was in C# and JAVA\n" +
-        "* Professionally I was a C# web developer and I build Android apps in my spare time using JAVA\n" +
+        "* Professionally I was a C# web developer and I build Android apps using JAVA\n" +
         "* Now I use Scala on daily basis and Kotlin for my Android apps\n" +
-        "* Clearly functional programming is where it's at now"
+        "* Clearly functional programming is where it's at"
      const val  WHAT_IS_KOTLIN_CONTENT =
          "* Statically typed programming language for modern multi-platform applications\n" +
          "* 100% interoperable with Java™ and Android™\n" +
@@ -37,7 +37,7 @@ object Constants {
     const val KOTLIN_VS_SCALA =
             "| Kotlin | Scala |" +
             "| ----------- | ----------- |" +
-            "| Better tooling | Tooling is getting |" +
+            "| Better tooling (JetBrains) | Tooling is getting better (dotty compiler)|" +
             "| Easier to learn | Steep learning curve |" +
             "| JAVA interoperablity | JAVA interoperablity |" +
             "| Community | Community |" +

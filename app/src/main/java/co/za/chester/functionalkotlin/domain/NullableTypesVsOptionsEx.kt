@@ -14,19 +14,19 @@ object NullableTypesVsOptionsEx {
         val nullableWithNull: String? = null
         val nullableWithValue: String? =
                 "You declare a nullable type with `?`, e.g. `val x: String?`.\n " +
-                "Access it safely we use `?.` safe-call operator which will return `null` if value is null.\n" +
-                "The `let` operator allows us to work will values that are there"
+                        "Access it safely we use `?.` safe-call operator which will return `null` if value is null.\n" +
+                        "The `let` operator allows us to work will values that are there"
 
-        nullableWithNull ?. let{
+        nullableWithNull?.let {
             it
         }
 
-         nullableWithValue ?. let {
+        nullableWithValue?.let {
             it
         }
     }
 
-    private fun optionsMapHighOrderFunction() ={
+    private fun optionsMapHighOrderFunction() = {
         val none = None
         val some = Some("Options work the same as in Scala. You map on it, if `Some` use it or if `None` do nothing")
 
@@ -37,10 +37,11 @@ object NullableTypesVsOptionsEx {
 
     private fun nullableTypeElvisOperator() = {
         val nullableWithNull: String? = null
-        nullableWithNull ?: "The elvis operator `?:` allows you to set a default when the value is `null`."
+        nullableWithNull
+                ?: "The elvis operator `?:` allows you to set a default when the value is `null`."
     }
 
-    private fun optionsGetOrElseMethod() ={
+    private fun optionsGetOrElseMethod() = {
         val none = None
         none.getOrElse { "The `getOrElse` method sets default when `None`" }
     }

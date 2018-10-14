@@ -9,23 +9,22 @@ abstract class BaseSlide(val title: String, private val section: Section) {
 }
 
 object AboutMeSlide : BaseSlide("About Me", Section(Constants.ABOUT_ME_CONTENT)) {
-    override fun next() = WhatIsKotlinSlide
+    override fun next() = WhyKotlin
     override fun back() = ThirdPartyFunctionalLibrary
 }
 
-object WhatIsKotlinSlide : BaseSlide("What is Kotlin?", Section(Constants.WHAT_IS_KOTLIN_CONTENT)) {
-    override fun next() = WhyKotlin
+object WhyKotlin : BaseSlide("Why Kotlin?", Section(Constants.WHY_KOTLIN_CONTENT)) {
+    override fun next() = WhatIsKotlinSlide
     override fun back() = AboutMeSlide
 }
-
-object WhyKotlin : BaseSlide("Why Kotlin?", Section(Constants.WHY_KOTLIN_CONTENT)) {
+object WhatIsKotlinSlide : BaseSlide("What is Kotlin?", Section(Constants.WHAT_IS_KOTLIN_CONTENT)) {
     override fun next() = FunctionalKotlinAspects
-    override fun back() = WhatIsKotlinSlide
+    override fun back() = WhyKotlin
 }
 
 object FunctionalKotlinAspects : BaseSlide("Functional Kotlin aspects", Section(Constants.FUNCTIONAL_KOTLIN_ASPECTS)) {
     override fun next() = Immutability
-    override fun back() = WhyKotlin
+    override fun back() = WhatIsKotlinSlide
 }
 
 object Immutability : BaseSlide("Immutability", Section(Constants.IMMUTABILITY_CONTENT, ImmutabilityEx.examples)) {
