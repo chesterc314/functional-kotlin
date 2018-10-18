@@ -35,15 +35,17 @@ object Constants {
             "#### Options\n" +
             "{result2}"
     const val KOTLIN_VS_SCALA =
-            "| #### Kotlin | #### Scala |\n" +
-            "| ----------- | ----------- |\n" +
+            "<center>\n\n"+
+            "| Kotlin | Scala |\n" +
+            "| -------------------------------------- | -------------------------------------- |\n" +
             "| Better tooling (JetBrains) | Tooling is getting better (dotty compiler)|\n" +
             "| Easier to learn | Steep learning curve |\n" +
             "| JAVA interoperablity | JAVA interoperablity |\n" +
             "| Community | Community |\n" +
             "| Nullable types | Options |\n" +
             "| No compile check? | Wartremover |\n" +
-            "| Weak pattern matching | Strong pattern matching |"
+            "| Weak pattern matching | Strong pattern matching |\n\n" +
+            "</center>"
     const val THIRD_PARTY_FUNCTIONAL_LIBRARY_CONTENT =
         "#### Try\n" +
         "{result1}\n" +

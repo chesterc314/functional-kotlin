@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        markdownView = findViewById(R.id.markdown_view)
+        markdownView = this.findViewById(R.id.markdown_view)
         updateTitleAndContent(currentSlide)
     }
 
