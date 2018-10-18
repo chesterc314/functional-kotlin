@@ -6,7 +6,8 @@ object Constants {
         "* Professionally I was a C# web developer and I build Android apps using JAVA\n" +
         "* Now I use Scala on daily basis and Kotlin for my Android apps\n" +
         "* Clearly functional programming is where it's at"
-     const val  WHAT_IS_KOTLIN_CONTENT =
+    const val EVOLUTION_IMAGE = "![Programmers Evolution](https://raw.githubusercontent.com/chesterc314/functional-kotlin/master/evolution.png \"Programmers Evolution\")"
+    const val  WHAT_IS_KOTLIN_CONTENT =
          "* Statically typed programming language for modern multi-platform applications\n" +
          "* 100% interoperable with Java™ and Android™\n" +
          "* Created by JetBrains\n" +

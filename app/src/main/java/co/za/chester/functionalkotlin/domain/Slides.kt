@@ -9,13 +9,18 @@ abstract class BaseSlide(val title: String, private val section: Section) {
 }
 
 object AboutMeSlide : BaseSlide("About Me", Section(Constants.ABOUT_ME_CONTENT)) {
-    override fun next() = WhyKotlin
+    override fun next() = EvolutionImage
     override fun back() = ThirdPartyFunctionalLibrary
+}
+
+object EvolutionImage: BaseSlide("Programmers Evolution", Section(Constants.EVOLUTION_IMAGE)) {
+    override fun next() = WhyKotlin
+    override fun back() = AboutMeSlide
 }
 
 object WhyKotlin : BaseSlide("Why Kotlin?", Section(Constants.WHY_KOTLIN_CONTENT)) {
     override fun next() = WhatIsKotlinSlide
-    override fun back() = AboutMeSlide
+    override fun back() = EvolutionImage
 }
 object WhatIsKotlinSlide : BaseSlide("What is Kotlin?", Section(Constants.WHAT_IS_KOTLIN_CONTENT)) {
     override fun next() = FunctionalKotlinAspects
