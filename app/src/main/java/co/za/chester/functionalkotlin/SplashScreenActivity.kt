@@ -12,7 +12,7 @@ class SplashScreenActivity : AppCompatActivity() {
         val easySplashScreenView: View = EasySplashScreen(this)
                 .withFullScreen()
                 .withTargetActivity(MainActivity::class.java)
-                .withSplashTimeOut(5000)
+                .withSplashTimeOut(3000)
                 .withBackgroundResource(android.R.color.black)
                 .withLogo(R.mipmap.lambda_luminaries)
                 .create()

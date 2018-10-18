@@ -5,29 +5,29 @@ object HigherOrderFunctionsEx {
         content.replace("{result1}",
                 "* ${functionsPassedAsArguments { it -> it }}\n" +
                         "* ${functionsDeclaredAsVariables()}\n" +
-                        "* ${functionsReturnedFromOtherFunction()("")}" +
+                        "* ${functionsReturnedFromOtherFunction()("")}\n" +
                         "* Examples of built in high order functions: \n${someBuiltInHigherOrderFunctions()}"
         )
     }
 
-    private fun functionsPassedAsArguments(passThrough: (String) -> String) = {
-        passThrough("Functions are passed through as arguments for functions")
+    private fun functionsPassedAsArguments(passThrough: (String) -> String) : String {
+        return passThrough("Functions are passed through as arguments for functions")
     }
 
-    private fun functionsDeclaredAsVariables() = {
+    private fun functionsDeclaredAsVariables(): String {
         val declaredFunction = { text: String -> text }
-        declaredFunction("Functions can be declared as variables")
+        return declaredFunction("Functions can be declared as variables")
     }
 
     private fun functionsReturnedFromOtherFunction(): (String) -> String {
-        return { text: String -> "Functions can be returned by functions" }
+        return { _ -> "Functions can be returned by functions" }
     }
 
-    private fun someBuiltInHigherOrderFunctions() = {
+    private fun someBuiltInHigherOrderFunctions(): String {
         val list = listOf("A", "B", "C")
-        "We have `filter`: `${list.filter { it == "A" }}` \n" +
-                "then there is `fold` which has an initial accumulator value and list is added from left to right to accumulator `${list.fold("") { acc, it -> acc + it }}`\n" +
-                "A `map` transforms value(s) from one form to another (A -> B) `${list.map { it.toLowerCase() }}`\n " +
+        return "We have `filter`: `${list.filter { it == "A" }}` \n" +
+                "then there is `fold` which has an initial accumulator value and list is added from left to right to accumulator `${list.fold("") { acc, it -> acc + it }}`.\n" +
+                "A `map` transforms value(s) from one form to another (A -> B) `${list.map { it.toLowerCase() }}`.\n " +
                 "A `flatMap` returns single list (flatten) and transforms values(s) `${listOf(list).flatMap { it }}`"
     }
 }

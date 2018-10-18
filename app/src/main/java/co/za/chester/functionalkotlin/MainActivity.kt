@@ -3,16 +3,17 @@ package co.za.chester.functionalkotlin
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.webkit.WebView
 import co.za.chester.functionalkotlin.domain.AboutMeSlide
 import co.za.chester.functionalkotlin.domain.BaseSlide
-import co.za.chester.functionalkotlin.domain.Constants.HTML_CONTENT
+import es.dmoral.markdownview.MarkdownView
 
 class MainActivity : AppCompatActivity() {
     private var currentSlide: BaseSlide = AboutMeSlide
+    private lateinit var markdownView: MarkdownView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        markdownView = findViewById(R.id.markdown_view)
         updateTitleAndContent(currentSlide)
     }
 
@@ -28,7 +29,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateTitleAndContent(slide: BaseSlide) {
         this.title = slide.title
-        val webView: WebView = findViewById(R.id.webView)
-        webView.loadData(HTML_CONTENT.replace("@{mark-down-content}", slide.content()), null, null)
+        markdownView.loadFromText(slide.content())
     }
 }
