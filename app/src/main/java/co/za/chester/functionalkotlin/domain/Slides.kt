@@ -8,6 +8,11 @@ abstract class BaseSlide(val title: String, private val section: Section) {
     abstract fun back(): BaseSlide
 }
 
+object BeforeReleaseSlide : BaseSlide("Join us", Section("# Join us for the Meetup at Jemstep 12/11/2018")) {
+    override fun next() = this
+    override fun back() = this
+}
+
 object AboutMeSlide : BaseSlide("About Me", Section(Constants.ABOUT_ME_CONTENT)) {
     override fun next() = EvolutionImage
     override fun back() = ThirdPartyFunctionalLibrary
