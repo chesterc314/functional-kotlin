@@ -5,11 +5,10 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import co.za.chester.functionalkotlin.domain.AboutMeSlide
 import co.za.chester.functionalkotlin.domain.BaseSlide
-import co.za.chester.functionalkotlin.domain.BeforeReleaseSlide
 import es.dmoral.markdownview.MarkdownView
 
 class MainActivity : AppCompatActivity() {
-    private var currentSlide: BaseSlide = BeforeReleaseSlide
+    private var currentSlide: BaseSlide = AboutMeSlide
     private lateinit var markdownView: MarkdownView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
