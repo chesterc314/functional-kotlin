@@ -15,15 +15,15 @@ object NullableTypesVsOptionsEx {
         val nullableWithValue: String? =
                 "You declare a nullable type with `?`, e.g. `val x: String?`." +
                         "Access it safely we use `?.` safe-call operator which will return `null` if value is null." +
-                        "The `let` operator allows us to work will values that are there"
+                        "The `let` operator allows us to work with values that are there"
 
         nullableWithNull?.let {
             it
         }
-        nullableWithValue?.let {
+        val result: String? = nullableWithValue?.let {
             it
         }
-        return nullableWithValue!!
+        return result!!
     }
 
     private fun optionsMapHighOrderFunction(): String {
