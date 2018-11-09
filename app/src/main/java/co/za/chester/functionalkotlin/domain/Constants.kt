@@ -47,11 +47,13 @@ object Constants {
             "| No compile check? | Wartremover |\n" +
             "| Weak pattern matching | Strong pattern matching |\n\n" +
             "</center>"
-    const val THIRD_PARTY_FUNCTIONAL_LIBRARY_CONTENT =
+    const val THIRD_PARTY_FUNCTIONAL_LIBRARY_CONTENT_TRY =
         "#### Try\n" +
-        "{result1}\n" +
+        "{result1}"
+    const val THIRD_PARTY_FUNCTIONAL_LIBRARY_CONTENT_COMPOSITION =
         "#### Composition\n" +
-        "{result2}\n\n" +
+        "{result1}"
+    const val THIRD_PARTY_FUNCTIONAL_LIBRARY_CONTENT_CURRYING =
         "#### Currying\n" +
-        "{result3}"
+        "{result1}"
  }

@@ -15,7 +15,7 @@ object BeforeReleaseSlide : BaseSlide("Join us", Section("# Join us for the Meet
 
 object AboutMeSlide : BaseSlide("About Me", Section(Constants.ABOUT_ME_CONTENT)) {
     override fun next() = EvolutionImage
-    override fun back() = ThirdPartyFunctionalLibrary
+    override fun back() = ThirdPartyFunctionalLibraryCurrying
 }
 
 object EvolutionImage: BaseSlide("Programmers Evolution", Section(Constants.EVOLUTION_IMAGE)) {
@@ -53,11 +53,21 @@ object NullableTypesVsOptions : BaseSlide("Nullable Types vs Options", Section(C
 }
 
 object KotlinVsScala : BaseSlide("Kotlin vs Scala", Section(Constants.KOTLIN_VS_SCALA)) {
-    override fun next() = ThirdPartyFunctionalLibrary
+    override fun next() = ThirdPartyFunctionalLibraryTry
     override fun back() = NullableTypesVsOptions
 }
 
-object ThirdPartyFunctionalLibrary : BaseSlide("Third Party Functional Library", Section(Constants.THIRD_PARTY_FUNCTIONAL_LIBRARY_CONTENT, ThirdPartyFunctionalLibraryEx.examples)) {
-    override fun next() = AboutMeSlide
+object ThirdPartyFunctionalLibraryTry : BaseSlide("Third Party Functional Library - Try", Section(Constants.THIRD_PARTY_FUNCTIONAL_LIBRARY_CONTENT_TRY, ThirdPartyFunctionalLibraryExTry.examples)) {
+    override fun next() = ThirdPartyFunctionalLibraryComposition
     override fun back() = KotlinVsScala
+}
+
+object ThirdPartyFunctionalLibraryComposition : BaseSlide("Third Party Functional Library - Composition", Section(Constants.THIRD_PARTY_FUNCTIONAL_LIBRARY_CONTENT_COMPOSITION, ThirdPartyFunctionalLibraryExComposition.examples)) {
+    override fun next() = ThirdPartyFunctionalLibraryCurrying
+    override fun back() = ThirdPartyFunctionalLibraryTry
+}
+
+object ThirdPartyFunctionalLibraryCurrying : BaseSlide("Third Party Functional Library - Currying", Section(Constants.THIRD_PARTY_FUNCTIONAL_LIBRARY_CONTENT_CURRYING, ThirdPartyFunctionalLibraryExCurrying.examples)) {
+    override fun next() = AboutMeSlide
+    override fun back() = ThirdPartyFunctionalLibraryComposition
 }

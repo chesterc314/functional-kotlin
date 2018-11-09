@@ -1,16 +1,10 @@
 package co.za.chester.functionalkotlin.domain
 
 import arrow.core.*
-import arrow.syntax.function.andThen
-import arrow.syntax.function.pipe
-import arrow.syntax.function.curried
-import arrow.syntax.function.uncurried
 
-object ThirdPartyFunctionalLibraryEx {
+object ThirdPartyFunctionalLibraryExTry {
     val examples: (content: String) -> String = { content ->
         content.replace("{result1}", arrowTryUsage())
-                .replace("{result2}", arrowCompositionUsage())
-                .replace("{result3}", arrowCurryingUsage())
     }
 
     open class GeneralException : Exception()
@@ -63,33 +57,5 @@ object ThirdPartyFunctionalLibraryEx {
                     "* The `getOrDefault` function allows you to set a failure when occurs \n" +
                     "* The `getOrElse` allows you to check for a particular exception when a failure occurs\n"
         }
-    }
-
-    private fun arrowCompositionUsage(): String {
-        val composeText: () -> String = {
-            "The `compose`, `forwardCompose` (alias `andThen`)," +
-                    " takes the result of invoking the right-hand or left-hand function as the parameter for the left-hand or right-hand function, when returns a composed function"
-        }
-        val pipeText: (String) -> String = { it -> it }
-        val bold: (String) -> String = { it -> "**$it**" }
-
-        val andThen = composeText andThen bold
-
-        val pipe = pipeText("You can also use the `pipe` which takes value from the executed function and passing it in to next function and executes it") pipe bold
-
-        return "* ${andThen()}\n* $pipe"
-    }
-
-
-
-    private fun arrowCurryingUsage(): String {
-        val textCombiner: (String, String) -> String = { text1: String, text2: String -> "$text1$text2"}
-        val curryingDefinition = "* Currying allows transforming a given function that takes multiple arguments into a sequence of functions, each having a single argument, \n"
-        val usage = "you can use `curried` function to convert a non-curried function into curried function or you can convert a curried function to normal function."
-        textCombiner(curryingDefinition, usage)
-        val curriedTextCombiner: (String) -> (String) -> String = textCombiner.curried()
-        val uncurriedTextCombiner: (String, String) -> String = curriedTextCombiner.uncurried()
-        uncurriedTextCombiner(curryingDefinition, usage)
-        return  curriedTextCombiner(curryingDefinition)(usage)
     }
 }
