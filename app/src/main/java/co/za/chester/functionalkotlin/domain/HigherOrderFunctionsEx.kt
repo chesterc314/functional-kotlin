@@ -27,7 +27,6 @@ object HigherOrderFunctionsEx {
         val list = listOf("A", "B", "C")
         return "We have `filter`: `${list.filter { it == "A" }}` \n" +
                 "then there is `fold` which has an initial accumulator value and list is added from left to right to accumulator `${list.fold("") { acc, it -> acc + it }}`.\n" +
-                "A `map` transforms value(s) from one form to another (A -> B) `${list.map { it.toLowerCase() }}`.\n " +
-                "A `flatMap` returns single list (flatten) and transforms values(s) `${listOf(list).flatMap { it }}`"
+                "A `map` transforms value(s) from one form to another (A -> B) `${list.map { it.toLowerCase() }}`."
     }
 }
